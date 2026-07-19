@@ -319,6 +319,15 @@ a:hover { color: var(--mustard-dark); }
   padding: 1.75rem 2rem;
 }
 
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-form-row2 {
   align-items: flex-end;
 }
