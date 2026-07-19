@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Spende bestätigt – Wärme weitergeben e.V.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.svg" width="26" height="26" alt="" class="logo-mark">
+        Wärme weitergeben e.V.
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#formular">Neue Spende registrieren</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="form-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+
+          <div class="tag-card confirmation-card" id="bestaetigung-inhalt">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <p class="confirmation-check" aria-hidden="true">✓</p>
+            <h2>Spende bestätigt</h2>
+            <p class="tag-card-hint">Vielen Dank! Deine Registrierung wurde erfolgreich gespeichert.</p>
+
+            <dl class="confirmation-list">
+              <div class="confirmation-row">
+                <dt>Art der Kleidung</dt>
+                <dd id="anzeige-kleidung">–</dd>
+              </div>
+              <div class="confirmation-row">
+                <dt>Krisengebiet</dt>
+                <dd id="anzeige-gebiet">–</dd>
+              </div>
+              <div class="confirmation-row">
+                <dt>Übergabeart</dt>
+                <dd id="anzeige-uebergabeart">–</dd>
+              </div>
+              <div class="confirmation-row">
+                <dt>Ort</dt>
+                <dd id="anzeige-ort">–</dd>
+              </div>
+              <div class="confirmation-row">
+                <dt>Datum</dt>
+                <dd id="anzeige-datum">–</dd>
+              </div>
+              <div class="confirmation-row">
+                <dt>Uhrzeit</dt>
+                <dd id="anzeige-uhrzeit">–</dd>
+              </div>
+            </dl>
+
+            <a href="index.html#formular" class="btn btn-outline-primary btn-submit">Weitere Spende registrieren</a>
+          </div>
+
+          <div class="tag-card d-none" id="keine-daten-hinweis">
+            <h2>Keine Registrierungsdaten gefunden</h2>
+            <p>Bitte fülle zunächst das <a href="index.html">Registrierungsformular</a> aus.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <p class="footer-brand">Wärme weitergeben e.V.</p>
+        <p class="footer-text">Ehrenamtliche Organisation für Kleiderspenden und Krisenhilfe.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="footer-text"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+        <p class="footer-text muted">Diese Seite ist eine fiktive Fallstudie im Rahmen eines Hochschulkurses.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/bestaetigung.js"></script>
+</body>
+</html>

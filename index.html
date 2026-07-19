@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Kleiderspende registrieren – Wärme weitergeben e.V.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registriere deine Kleiderspende online – wähle Übergabe an der Geschäftsstelle oder Abholung durch unser Sammelfahrzeug.">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.svg" width="26" height="26" alt="" class="logo-mark">
+        Wärme weitergeben e.V.
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigation umschalten">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html#formular">Spende registrieren</a></li>
+          <li class="nav-item"><a class="nav-link" href="#so-funktioniert">So funktioniert's</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Kleiderspenden</p>
+      <h1>Gib deiner Kleidung eine zweite Chance.</h1>
+      <p class="lead-text">Schnell registriert, gezielt gespendet.</p>
+    </div>
+  </section>
+
+  <section class="steps-section" id="so-funktioniert">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="section-heading">So funktioniert's</h2>
+          <div class="row g-4 mt-1">
+            <div class="col-md-4">
+              <div class="step-card">
+                <span class="step-number">1</span>
+                <h3>Formular ausfüllen</h3>
+                <p>Wähle die Art der Kleidung und das Krisengebiet, das deine Spende erreichen soll.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step-card">
+                <span class="step-number">2</span>
+                <h3>Übergabeart wählen</h3>
+                <p>Bring die Spende persönlich vorbei oder lass sie dir vom Sammelfahrzeug abholen.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step-card">
+                <span class="step-number">3</span>
+                <h3>Bestätigung erhalten</h3>
+                <p>Du siehst sofort alle Details deiner Registrierung auf einer Bestätigungsseite.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section section-alt" id="formular">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <div class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <h2>Spende registrieren</h2>
+            <p class="tag-card-hint">Alle Felder sind erforderlich. Je nach Übergabeart ändern sich die Angaben unten.</p>
+
+            <form id="spendenformular" novalidate>
+
+              <fieldset class="form-block">
+                <legend>Übergabeart</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="uebergabeart" id="uebergabe-vorort" value="vorort" checked>
+                  <label class="form-check-label" for="uebergabe-vorort">
+                    Übergabe an der Geschäftsstelle
+                    <span class="option-hint">Persönliche Abgabe am Tablet vor Ort</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="uebergabeart" id="uebergabe-abholung" value="abholung">
+                  <label class="form-check-label" for="uebergabe-abholung">
+                    Abholung
+                    <span class="option-hint">Unser Sammelfahrzeug holt die Spende ab</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-block" id="abholadresse-block" hidden>
+                <legend>Abholadresse</legend>
+                <div class="row g-3">
+                  <div class="col-sm-8">
+                    <label for="strasse" class="form-label">Straße und Hausnummer</label>
+                    <input type="text" class="form-control" id="strasse" name="strasse" placeholder="z. B. Musterweg 4">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="plz" class="form-label">Postleitzahl</label>
+                    <input type="text" class="form-control" id="plz" name="plz" placeholder="z. B. 70199" inputmode="numeric" maxlength="5">
+                    <div class="invalid-feedback" id="plz-fehler"></div>
+                  </div>
+                  <div class="col-sm-8">
+                    <label for="ort" class="form-label">Ort</label>
+                    <input type="text" class="form-control" id="ort" name="ort" placeholder="z. B. Stuttgart">
+                  </div>
+                </div>
+                <p class="form-note">Hinweis: Eine Abholung ist nur möglich, wenn deine Postleitzahl in der Nähe unserer Geschäftsstelle liegt (gleiche ersten zwei Ziffern wie <strong id="geschaeftsstelle-plz-anzeige"></strong>).</p>
+              </fieldset>
+
+              <fieldset class="form-block">
+                <legend>Details zur Spende</legend>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="kleidungsart" class="form-label">Art der Kleidung</label>
+                    <select class="form-select" id="kleidungsart" name="kleidungsart" required>
+                      <option value="" selected disabled>Bitte wählen …</option>
+                      <option value="Damenkleidung">Damenkleidung</option>
+                      <option value="Herrenkleidung">Herrenkleidung</option>
+                      <option value="Kinderkleidung">Kinderkleidung</option>
+                      <option value="Schuhe">Schuhe</option>
+                      <option value="Decken und Textilien">Decken und Textilien</option>
+                      <option value="Sonstiges">Sonstiges</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="krisengebiet" class="form-label">Krisengebiet</label>
+                    <select class="form-select" id="krisengebiet" name="krisengebiet" required>
+                      <option value="" selected disabled>Bitte wählen …</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="Sudan">Sudan</option>
+                      <option value="Gazastreifen">Gazastreifen</option>
+                      <option value="Jemen">Jemen</option>
+                      <option value="Somalia">Somalia</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div id="formular-fehler" class="alert alert-danger d-none" role="alert"></div>
+
+              <button type="submit" class="btn btn-primary btn-submit">Spende registrieren</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="form-section form-section--compact" id="kontakt">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-card">
+            <div class="contact-card__intro">
+              <h2>Du hast Fragen?</h2>
+              <p>Schreib uns kurz – wir melden uns bei dir.</p>
+            </div>
+            <div class="contact-card__form">
+              <form id="kontaktformular" novalidate>
+                <div class="row g-3 mb-3">
+                  <div class="col-sm-6">
+                    <label for="kontakt-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="kontakt-name" name="name" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="kontakt-email" class="form-label">E-Mail</label>
+                    <input type="email" class="form-control" id="kontakt-email" name="email" required>
+                  </div>
+                </div>
+                <div class="d-flex gap-3 contact-form-row2">
+                  <div class="flex-grow-1">
+                    <label for="kontakt-nachricht" class="form-label">Nachricht</label>
+                    <textarea class="form-control" id="kontakt-nachricht" name="nachricht" rows="2" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-submit">Senden</button>
+                </div>
+              </form>
+
+              <div class="kontakt-erfolg d-none" id="kontakt-erfolg" role="status">
+                <p class="kontakt-erfolg-text">Danke, <strong id="kontakt-erfolg-name"></strong>! Wir haben deine Nachricht erhalten und melden uns bei dir.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <p class="footer-brand">Wärme weitergeben e.V.</p>
+        <p class="footer-text">Ehrenamtliche Organisation für Kleiderspenden und Krisenhilfe.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="footer-text"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+        <p class="footer-text muted">Diese Seite ist eine fiktive Fallstudie im Rahmen eines Hochschulkurses.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/kontakt.js"></script>
+</body>
+</html>
