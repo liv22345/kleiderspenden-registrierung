@@ -177,6 +177,10 @@
             </div>
             <div class="contact-card__form">
               <form id="kontaktformular" novalidate>
+                <div class="honeypot-field" aria-hidden="true">
+                  <label for="kontakt-firma">Firma (bitte leer lassen)</label>
+                  <input type="text" id="kontakt-firma" name="firma" tabindex="-1" autocomplete="off">
+                </div>
                 <div class="row g-3 mb-3">
                   <div class="col-sm-6">
                     <label for="kontakt-name" class="form-label">Name</label>
@@ -185,6 +189,7 @@
                   <div class="col-sm-6">
                     <label for="kontakt-email" class="form-label">E-Mail</label>
                     <input type="email" class="form-control" id="kontakt-email" name="email" required>
+                    <div class="invalid-feedback" id="kontakt-email-fehler"></div>
                   </div>
                 </div>
                 <div class="d-flex gap-3 contact-form-row2">
