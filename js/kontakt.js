@@ -16,19 +16,35 @@ const kontaktForm = document.getElementById("kontaktformular");
 if (kontaktForm) {
   const erfolgBox = document.getElementById("kontakt-erfolg");
   const erfolgName = document.getElementById("kontakt-erfolg-name");
+
+  const nameInput = document.getElementById("kontakt-name");
+  const nameFehler = document.getElementById("kontakt-name-fehler");
   const emailInput = document.getElementById("kontakt-email");
   const emailFehler = document.getElementById("kontakt-email-fehler");
+  const nachrichtInput = document.getElementById("kontakt-nachricht");
+  const nachrichtFehler = document.getElementById("kontakt-nachricht-fehler");
+
+  function fehlerSetzen(input, fehlerElement, nachricht) {
+    input.classList.add("is-invalid");
+    fehlerElement.textContent = nachricht;
+  }
+
+  function fehlerZuruecksetzen(input, fehlerElement) {
+    input.classList.remove("is-invalid");
+    fehlerElement.textContent = "";
+  }
 
   kontaktForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    emailInput.classList.remove("is-invalid");
-    emailFehler.textContent = "";
+    fehlerZuruecksetzen(nameInput, nameFehler);
+    fehlerZuruecksetzen(emailInput, emailFehler);
+    fehlerZuruecksetzen(nachrichtInput, nachrichtFehler);
 
     const honeypot = document.getElementById("kontakt-firma").value.trim();
-    const name = document.getElementById("kontakt-name").value.trim();
+    const name = nameInput.value.trim();
     const email = emailInput.value.trim();
-    const nachricht = document.getElementById("kontakt-nachricht").value.trim();
+    const nachricht = nachrichtInput.value.trim();
 
     // Honeypot befüllt -> vermutlich ein Bot. Anfrage stillschweigend
     // verwerfen, aber dem Absender keinen Hinweis darauf geben.
@@ -37,13 +53,29 @@ if (kontaktForm) {
       return;
     }
 
-    if (!name || !email || !nachricht) {
-      return;
+    // Alle Pflichtfelder prüfen und ggf. mehrere Fehler gleichzeitig anzeigen,
+    // statt nur beim ersten fehlenden Feld abzubrechen.
+    let gueltig = true;
+
+    if (!name) {
+      fehlerSetzen(nameInput, nameFehler, "Bitte gib deinen Namen ein.");
+      gueltig = false;
     }
 
-    if (!EMAIL_PATTERN.test(email)) {
-      emailInput.classList.add("is-invalid");
-      emailFehler.textContent = "Bitte gib eine gültige E-Mail-Adresse ein (z. B. name@beispiel.de).";
+    if (!email) {
+      fehlerSetzen(emailInput, emailFehler, "Bitte gib deine E-Mail-Adresse ein.");
+      gueltig = false;
+    } else if (!EMAIL_PATTERN.test(email)) {
+      fehlerSetzen(emailInput, emailFehler, "Bitte gib eine gültige E-Mail-Adresse ein (z. B. name@beispiel.de).");
+      gueltig = false;
+    }
+
+    if (!nachricht) {
+      fehlerSetzen(nachrichtInput, nachrichtFehler, "Bitte gib eine Nachricht ein.");
+      gueltig = false;
+    }
+
+    if (!gueltig) {
       return;
     }
 
