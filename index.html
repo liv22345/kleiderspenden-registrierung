@@ -184,6 +184,7 @@
                   <div class="col-sm-6">
                     <label for="kontakt-name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="kontakt-name" name="name" required>
+                    <div class="invalid-feedback" id="kontakt-name-fehler"></div>
                   </div>
                   <div class="col-sm-6">
                     <label for="kontakt-email" class="form-label">E-Mail</label>
@@ -195,6 +196,7 @@
                   <div class="flex-grow-1">
                     <label for="kontakt-nachricht" class="form-label">Nachricht</label>
                     <textarea class="form-control" id="kontakt-nachricht" name="nachricht" rows="2" required></textarea>
+                    <div class="invalid-feedback" id="kontakt-nachricht-fehler"></div>
                   </div>
                   <button type="submit" class="btn btn-primary btn-submit">Senden</button>
                 </div>
