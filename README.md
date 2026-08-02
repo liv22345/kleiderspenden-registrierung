@@ -7,7 +7,7 @@ Fallstudie im Rahmen des Kurses IPWA01-01 – Programmierung von Webanwendungsob
 ## Struktur
 
 ```
-index.html              Startseite mit Registrierungsformular
+index.html               Startseite mit Registrierungsformular
 bestaetigung.html        Bestätigungsseite mit allen erfassten Daten
 css/style.css            Eigenständiges Styling (Bootstrap 5 als Basis)
 js/script.js             Formularlogik: Umschaltung, PLZ-Prüfung, Validierung
