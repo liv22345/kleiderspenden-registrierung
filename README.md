@@ -26,5 +26,4 @@ Repository klonen und `index.html` im Browser öffnen, oder über GitHub Pages b
 
 ## Live-Demo
 
-<!-- Nach Aktivierung von GitHub Pages hier den Link eintragen -->
-https://DEIN-USERNAME.github.io/kleiderspenden-registrierung/
+[Live-Demo ansehen](https://liv22345.github.io/kleiderspenden-registrierung/)
